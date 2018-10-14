@@ -1,3 +1,26 @@
+# Getting started:
+
+1.) Make sure [Git](https://git-scm.com/downloads) and [NodeJS](https://nodejs.org/en/) are installed
+
+2.) Open command line, 'cd' to your home directory and then clone this app:
+```
+git clone https://github.com/Anshul2166/Microsoft-Codefundo
+```
+3.) 'cd' into newly cloned app directory
+```
+cd codefundo
+```
+
+4.) Install any dependencies required by app
+```
+npm install
+```
+5.) Run app
+```
+npm start
+```
+6.) Go to http://localhost:3000 to view
+
 # CodeFundo Idea
 
 We plan to create a web app with a prediction system on tornado (implemented using deep learning), which can also send a warning to the people who may be or are in danger via notifications or alerts. If the users are offline because the internet is not accessible by people of that area then we will try to notify the local authorities and other concerned bodies via mail. We will create a separate curated list and ensure that the mailing list does not miss any area. 
