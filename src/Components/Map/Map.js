@@ -11,7 +11,7 @@ const MapWithAMarker = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={8}
-      defaultCenter={{
+      center={{
         lat: props.currentPosition.lat,
         lng: props.currentPosition.lng
       }}
@@ -37,7 +37,7 @@ class Map extends Component {
       }
     };
   }
-  componentDidMount(){
+  componentWillMount(){
     this.getGeoLocation();
   }
   getGeoLocation = () => {
