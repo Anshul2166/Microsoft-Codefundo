@@ -3,6 +3,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
+import Map from "../Map/Map";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -28,7 +29,7 @@ class DashboardContent extends Component {
       <div className="dash-content">
         <p>This is the code content</p>
         <Grid container spacing={24}>
-          <Box children={<DemoParagraph/>}/>
+          <Box children={<Map/>}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
