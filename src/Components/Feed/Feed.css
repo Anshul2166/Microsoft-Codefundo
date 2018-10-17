@@ -1,9 +1,14 @@
 .feed-card {
-  margin: 0% 2% 5% 2%;
+  margin: 0% 3% 5% 2%;
   padding: 2.5%;
   border: 1px solid black;
+  height: fit-content;
 }
 .feed-div {
-  height: 30vh;
+  height: 35vh;
   overflow: scroll;
+}
+.card-actions-row > button {
+  margin-left: auto;
+  margin-right: auto;
 }
