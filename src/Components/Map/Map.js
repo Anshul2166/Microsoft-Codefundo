@@ -7,6 +7,8 @@ import {
 } from "react-google-maps";
 import "./Map.css";
 
+//Our map that gets generated with marker on it.
+//The marker denotes the current position of the user on the map
 const MapWithAMarker = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
@@ -26,22 +28,29 @@ const MapWithAMarker = withScriptjs(
   ))
 );
 
+//The main class which will be called from outside
 class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
       //Set Raipur's location as default location
       currentPosition: {
-        lat: 51.2514,
-        lng: 81.6296
+        lat: 21.23,
+        lng: 81.60
       }
     };
   }
+
+  //componentWillMount will get the geolocation before the first render starts. 
   componentWillMount(){
     this.getGeoLocation();
   }
+
+  //Since geolocation using navigator is async, the map would first get loaded with default location
+  //and then will move to correct user's position once the geolocation method returns the coordinates through state
   getGeoLocation = () => {
     if (navigator.geolocation) {
+        //if browser supports geolocation and user allows us the access, then the condition is satisfied
         navigator.geolocation.getCurrentPosition(
             position => {
                 console.log(position.coords);
@@ -57,17 +66,20 @@ class Map extends Component {
             }
         )
     } else {
+        //if getting the geolocation fails due to any reason, then show the alert
         alert("Location access denied");
     }
   }
 
   render() {
-    const title = process.env.REACT_APP_GOOGLE_MAPS_API;
+    const key = process.env.REACT_APP_GOOGLE_MAPS_API; //the google map api key
+    
+    // url is the url of google map api along with api key
     let url =
       "https://maps.googleapis.com/maps/api/js?key=" +
-      title +
+       key +
       "&v=3.exp&libraries=geometry,drawing,places";
-    // this.getGeoLocation();
+
     return (
       <MapWithAMarker
         currentPosition={this.state.currentPosition}
