@@ -1,0 +1,9 @@
+.feed-card {
+  margin: 0% 2% 5% 2%;
+  padding: 2.5%;
+  border: 1px solid black;
+}
+.feed-div {
+  height: 30vh;
+  overflow: scroll;
+}
