@@ -90,6 +90,8 @@ class Header extends React.Component {
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    let messages=this.props.messages;
+    let notifications=this.props.notifications;
 
     const renderMenu = (
       <Menu
@@ -114,7 +116,7 @@ class Header extends React.Component {
       >
         <MenuItem>
           <IconButton color="inherit">
-            <Badge className={classes.margin} badgeContent={4} color="secondary">
+            <Badge className={classes.margin} badgeContent={messages.length} color="secondary">
               <MailIcon />
             </Badge>
           </IconButton>
@@ -122,7 +124,7 @@ class Header extends React.Component {
         </MenuItem>
         <MenuItem>
           <IconButton color="inherit">
-            <Badge className={classes.margin} badgeContent={11} color="secondary">
+            <Badge className={classes.margin} badgeContent={notifications.length} color="secondary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
@@ -150,12 +152,12 @@ class Header extends React.Component {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
-                <Badge className={classes.margin} badgeContent={4} color="secondary">
+                <Badge className={classes.margin} badgeContent={messages.length} color="secondary">
                   <MailIcon />
                 </Badge>
               </IconButton>
               <IconButton color="inherit">
-                <Badge className={classes.margin} badgeContent={17} color="secondary">
+                <Badge className={classes.margin} badgeContent={notifications.length} color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>

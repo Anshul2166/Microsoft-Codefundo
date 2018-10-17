@@ -15,11 +15,10 @@ const NewsFeedCard = data => {
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {data.title}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {data.description}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -34,15 +33,38 @@ const NewsFeedCard = data => {
     </Card>
   );
 };
+
+const feeds=[
+    {
+        "title":"Lizard",
+        "description":"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+    },
+    {
+        "title":"Lizard",
+        "description":"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+    },
+    {
+        "title":"Lizard",
+        "description":"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+    },
+    {
+        "title":"Lizard",
+        "description":"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+    },
+    {
+        "title":"Lizard",
+        "description":"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+    }
+];
+
 class Feed extends Component {
   render() {
+    const allFeeds=feeds.map((feed,index)=>
+        <NewsFeedCard key={index} title={feed.title} description={feed.description} />
+    );
     return (
       <div className="feed-div">
-        <NewsFeedCard />
-        <NewsFeedCard />
-        <NewsFeedCard />
-        <NewsFeedCard />
-        <NewsFeedCard />
+        {allFeeds}
       </div>
     );
   }

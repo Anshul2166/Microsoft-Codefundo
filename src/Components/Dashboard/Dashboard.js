@@ -5,13 +5,15 @@ import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
 import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
+import messages from "../../shared/messages";
+import notifications from "../../shared/notifications";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <Header />
+        <Header messages={messages} notifications={notifications}/>
         <DashboardContent />
         <Footer />
       </div>
