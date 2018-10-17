@@ -29,7 +29,7 @@ class DashboardContent extends Component {
       <div className="dash-content">
         <p>This is the code content</p>
         <Grid container spacing={24}>
-          <Box children={<Map/>}/>
+          <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
@@ -42,3 +42,7 @@ class DashboardContent extends Component {
 }
 
 export default Dashboard;
+
+// Removing the component that would render the map to avoid unneccesary api calls
+// To add map
+// <Box children={<Map/>}/>
