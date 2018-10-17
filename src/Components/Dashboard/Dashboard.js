@@ -17,18 +17,23 @@ class Dashboard extends Component {
   }
 }
 
+const title="xs={12} sm={6}";
+const DemoParagraph=()=>(
+    <p>{title}</p>
+);
+
 class DashboardContent extends Component {
   render() {
     return (
       <div className="dash-content">
         <p>This is the code content</p>
         <Grid container spacing={24}>
-          <Box />
-          <Box />
-          <Box />
-          <Box />
-          <Box />
-          <Box />
+          <Box children={<DemoParagraph/>}/>
+          <Box children={<DemoParagraph/>}/>
+          <Box children={<DemoParagraph/>}/>
+          <Box children={<DemoParagraph/>}/>
+          <Box children={<DemoParagraph/>}/>
+          <Box children={<DemoParagraph/>}/>
         </Grid>
       </div>
     );
