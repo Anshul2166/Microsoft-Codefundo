@@ -67,9 +67,9 @@
     padding: 0;
   }
 
-  /* .footer__links__column {
+  .footer__links__column {
     flex: 0 1 150px;
-  } */
+  }
 }
 .footer-credentials {
   color: white;
