@@ -7,8 +7,10 @@ import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
-import "./Dashboard.css";
 import { LineChart } from "../Common/Charts/charts";
+import SOS from "../SOS/SOS";
+import Details from "../Common/Details/Details";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
   render() {
@@ -33,12 +35,17 @@ class DashboardContent extends Component {
       <div className="dash-content">
         <p>This is the code content</p>
         <Grid container spacing={24}>
+           <Details />
+           <Details />
+           <Details />
+           <Details />
+        </Grid>
+        <Grid container spacing={24}>
           <Box children={<DemoParagraph/>}/>
           <Box children={<Feed/>}/>
           <Box children={LineChart}/>
-          <Box children={<DemoParagraph/>}/>
-          <Box children={<DemoParagraph/>}/>
-          <Box children={<DemoParagraph/>}/>
+          <Box children={<Feed/>}/>
+          <Box children={<SOS/>}/>
         </Grid>
       </div>
     );
