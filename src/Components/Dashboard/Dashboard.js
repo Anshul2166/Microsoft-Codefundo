@@ -8,6 +8,7 @@ import Feed from "../Feed/Feed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
 import "./Dashboard.css";
+import { LineChart } from "../Common/Charts/charts";
 
 class Dashboard extends Component {
   render() {
@@ -34,7 +35,7 @@ class DashboardContent extends Component {
         <Grid container spacing={24}>
           <Box children={<DemoParagraph/>}/>
           <Box children={<Feed/>}/>
-          <Box children={<DemoParagraph/>}/>
+          <Box children={LineChart}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
           <Box children={<DemoParagraph/>}/>
