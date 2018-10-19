@@ -85,7 +85,7 @@ class Map extends Component {
         currentPosition={this.state.currentPosition}
         googleMapURL={url}
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
+        containerElement={<div className="map-container" style={{ height: "85vh" }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     );

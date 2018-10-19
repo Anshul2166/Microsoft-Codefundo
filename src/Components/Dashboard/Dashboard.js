@@ -38,10 +38,10 @@ class DashboardContent extends Component {
         {tornadoDetails}
         <Grid container spacing={24}>
           <Box children={<SOS/>} size={12}/>
-          <Box children={<DemoParagraph />} size={6}/>
           <Box children={<Feed />} size={6}/>
-          <Box children={LineChart} size={6}/>
           <Box children={<Feed />} size={6}/>
+          <Box children={<Map />} size={12}/>
+          <Box children={LineChart} size={12}/>
         </Grid>
       </div>
     );
