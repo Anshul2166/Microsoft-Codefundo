@@ -7,11 +7,7 @@
 }
 .feed-div {
   height: 35vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-::-webkit-scrollbar {
-  display: none;
+  overflow: auto;
 }
 .card-actions-row > button {
   margin-left: auto;

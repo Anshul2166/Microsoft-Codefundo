@@ -9,8 +9,6 @@ import "./Box.css";
 //for '<Box><Element /><Box>', the children would be element
 
 const Box = props => {
-  console.log("Here inside");
-  console.log(props);
   return (
     <Grid className="box-boundary" item xs={12} sm={props.size}>
       <Paper className="box-body">{props.children}</Paper>
