@@ -8,51 +8,69 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import blue from "@material-ui/core/colors/blue";
 import Grid from "@material-ui/core/Grid";
-import logo from "../../../Common/Images/pressure.png";
 import AlarmIcon from "@material-ui/icons/Alarm";
 
 const styles = theme => ({
   card: {
     maxWidth: 600,
     margin: 15,
-    padding:10
+    padding: 15
   },
   avatar: {
     backgroundColor: blue[500]
   },
   iconSmall: {
-    marginLeft: 15,
-    marginRight: 15
+    float:"right"
   },
-  verticalCenter:{
-    marginTop:"auto", 
-    marginBottom:"auto"
+  caption:{
+    float:"left"
+  },
+  verticalCenter: {
+    marginTop: "auto",
+    marginBottom: "auto"
   }
 });
 
 class Details extends React.Component {
   render() {
     const { classes } = this.props;
-
-    return (
-      <Grid item sm={3} xs={6}>
+    let data = this.props.data.parameters;
+    console.log(data);
+    let keys = Object.keys(data);
+    console.log(keys);
+    const tornado = keys.map((key, index) => (
+      <Grid item lg={3} md={4} sm={6} xs={12}>
         <Card className={classes.card}>
           <CardHeader
             avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
+              <Avatar aria-label={key} className={classes.avatar}>
+                {key.charAt(0)}
               </Avatar>
             }
-            title="Tornado Pressure"
-            subheader="100 atm"
+            title={key}
+            subheader={data[key].info}
           />
           <CardContent>
             <Grid container spacing={24}>
-              <AlarmIcon className={classes.iconSmall}/>
-              <Typography variant="caption" className={classes.verticalCenter}>Last updated 2 hours ago</Typography>
+              <Grid item sm={3}>
+                <AlarmIcon className={classes.iconSmall} />
+              </Grid>
+              <Grid className={classes.verticalCenter} item sm={9}>
+                <Typography
+                  variant="caption"
+                  className={classes.verticalCenter +" "+classes.caption}
+                >
+                  Last updated {data[key].timestamp}
+                </Typography>
+              </Grid>
             </Grid>
           </CardContent>
         </Card>
+      </Grid>
+    ));
+    return (
+      <Grid container spacing={24}>
+        {tornado}
       </Grid>
     );
   }

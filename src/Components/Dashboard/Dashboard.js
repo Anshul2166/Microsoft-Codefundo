@@ -7,6 +7,7 @@ import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
+import tornados from "../../shared/tornado";
 import { LineChart } from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
@@ -16,7 +17,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <Header messages={messages} notifications={notifications}/>
+        <Header messages={messages} notifications={notifications} />
         <DashboardContent />
         <Footer />
       </div>
@@ -24,28 +25,24 @@ class Dashboard extends Component {
   }
 }
 
-const title="xs={12} sm={6}";
-const DemoParagraph=()=>(
-    <p>{title}</p>
-);
+const title = "xs={12} sm={6}";
+const DemoParagraph = () => <p>{title}</p>;
 
 class DashboardContent extends Component {
   render() {
+    const tornadoDetails = tornados.map((tornado, index) => (
+      <Details data={tornado} key={index} />
+    ));
     return (
       <div className="dash-content">
         <p>This is the code content</p>
+        {tornadoDetails}
         <Grid container spacing={24}>
-           <Details />
-           <Details />
-           <Details />
-           <Details />
-        </Grid>
-        <Grid container spacing={24}>
-          <Box children={<DemoParagraph/>}/>
-          <Box children={<Feed/>}/>
-          <Box children={LineChart}/>
-          <Box children={<Feed/>}/>
-          <Box children={<SOS/>}/>
+          <Box children={<DemoParagraph />} />
+          <Box children={<Feed />} />
+          <Box children={LineChart} />
+          <Box children={<Feed />} />
+          <Box children={<SOS />} />
         </Grid>
       </div>
     );
