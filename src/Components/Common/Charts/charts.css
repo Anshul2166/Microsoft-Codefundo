@@ -1,0 +1,10 @@
+.chart-in-dash {
+  background-color: white !important;
+}
+.chart-content-div {
+  min-height: 55vh;
+  padding: 2%;
+  margin: 1%;
+  /* margin: -2.5% !important; */
+  background-color: white !important;
+}

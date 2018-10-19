@@ -40,7 +40,7 @@ class DashboardContent extends Component {
           <Box children={<SOS/>} size={12}/>
           <Box children={<Feed />} size={6}/>
           <Box children={<Feed />} size={6}/>
-          <Box children={<Map />} size={12}/>
+          <Box children={<DemoParagraph />} size={12}/>
           <Box children={LineChart} size={12}/>
         </Grid>
       </div>
