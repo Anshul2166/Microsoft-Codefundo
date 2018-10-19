@@ -1,14 +1,22 @@
 .feed-card {
   margin: 0% 3% 5% 2%;
   padding: 2.5%;
-  border: 1px solid black;
+  border: 1px solid floralwhite;
   height: fit-content;
+  overflow: hidden;
 }
 .feed-div {
   height: 35vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .card-actions-row > button {
   margin-left: auto;
   margin-right: auto;
+}
+.feed-card .title {
+  color: black !important;
 }

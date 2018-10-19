@@ -3,4 +3,10 @@
   min-height: 35vh;
   padding: 2.5%;
   margin: 2.5%;
+  background-color: darkslategray !important;
+  overflow: hidden;
+}
+.box-body h2,
+p {
+  color: white !important;
 }

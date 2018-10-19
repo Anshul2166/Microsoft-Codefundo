@@ -15,10 +15,10 @@ const NewsFeedCard = data => {
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {data.title}
+            <span className="title">{data.title}</span>
           </Typography>
           <Typography component="p">
-            {data.description}
+            <span className="title">{data.description}</span>
           </Typography>
         </CardContent>
       </CardActionArea>

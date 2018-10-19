@@ -1,3 +1,6 @@
 .sos-box {
   padding: 5%;
 }
+.sos-box span {
+  color: wheat;
+}
