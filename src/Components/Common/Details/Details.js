@@ -9,15 +9,18 @@ import Typography from "@material-ui/core/Typography";
 import blue from "@material-ui/core/colors/blue";
 import Grid from "@material-ui/core/Grid";
 import AlarmIcon from "@material-ui/icons/Alarm";
+import './Details.css';
 
 const styles = theme => ({
   card: {
     maxWidth: 600,
     margin: 15,
-    padding: 15
+    padding: 15,
+    backgroundColor:"#395c6b"
   },
   avatar: {
-    backgroundColor: blue[500]
+    backgroundColor: "oldlace",
+    color:"black"
   },
   iconSmall: {
     float:"right"
@@ -34,13 +37,12 @@ const styles = theme => ({
 class Details extends React.Component {
   render() {
     const { classes } = this.props;
-    let data = this.props.data.parameters;
-    console.log(data);
+    let data = this.props.data.parameters;    
     let keys = Object.keys(data);
-    console.log(keys);
+
     const tornado = keys.map((key, index) => (
-      <Grid item lg={3} md={4} sm={6} xs={12}>
-        <Card className={classes.card}>
+      <Grid className="" item lg={3} md={4} sm={6} xs={12}>
+        <Card className={classes.card+" details-card"}>
           <CardHeader
             avatar={
               <Avatar aria-label={key} className={classes.avatar}>

@@ -35,7 +35,6 @@ class DashboardContent extends Component {
     ));
     return (
       <div className="dash-content">
-        <p>This is the code content</p>
         {tornadoDetails}
         <Grid container spacing={24}>
           <Box children={<DemoParagraph />} />
