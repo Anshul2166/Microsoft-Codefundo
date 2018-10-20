@@ -6,7 +6,7 @@ import "./charts.css";
 const LineChart = (
   <div className="chart-div">
   <Typography variant="display1" component="h2">
-      <span className="title">Title</span>
+      <span className="title">Line Graph</span>
     </Typography>
   <div className="chart-content-div">
     <Chart

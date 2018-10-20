@@ -38,7 +38,7 @@ class DashboardContent extends Component {
       <div className="dash-content">
         {tornadoDetails}
         <Grid container spacing={24}>
-          <Box children={<SOS/>} size={12} sm={12} md={12}/>
+          <Box children={<SOS/>} size={12} sm={12} md={12} backClass="blue-violet"/>
           <Box children={<Feed />} title="Local News Feed" size={6}/>
           <Box children={<SocialFeed />} title="Twitter Feed" size={5} className="shift-right"/>
           <Box children={<DemoParagraph />} sm={12} md={12} size={12}/>

@@ -3,7 +3,7 @@
   min-height: 35vh;
   padding: 2.5%;
   margin: 2.5%;
-  background-color: darkslategray !important;
+  background-color: #3c3d41 !important;
   overflow: hidden;
 }
 .box-body h2,
@@ -15,4 +15,7 @@ p {
 }
 .shift-right {
   margin-left: auto !important;
+}
+.blue-violet {
+  background-color: dimgrey !important;
 }
