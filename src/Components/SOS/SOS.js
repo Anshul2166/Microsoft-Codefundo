@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 import './SOS.css';
 
 const styles = theme => ({

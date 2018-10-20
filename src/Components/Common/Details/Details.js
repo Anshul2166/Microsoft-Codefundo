@@ -17,7 +17,7 @@ const styles = theme => ({
     margin: 15,
     padding: 15,
     // backgroundColor:"#395c6b"
-    backgroundColor:"darkblue"
+    backgroundColor:"#395c6b"
   },
   avatar: {
     backgroundColor: "oldlace",

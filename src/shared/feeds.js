@@ -1,8 +1,8 @@
 const feeds = [
     {
-      title: "Lizard",
+      title: "Resuce operation",
       description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+        "Volunteers have launched a rescue operation near the coastal regions and an estimate 50,000 have been evacuated"
     },
     {
       title: "Lizard",

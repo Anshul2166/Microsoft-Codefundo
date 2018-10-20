@@ -3,7 +3,7 @@
   min-height: 35vh;
   padding: 2.5%;
   margin: 2.5%;
-  background-color: #3c3d41 !important;
+  background-color: #395c6b !important;
   overflow: hidden;
 }
 .box-body h2,
@@ -17,5 +17,5 @@ p {
   margin-left: auto !important;
 }
 .blue-violet {
-  background-color: dimgrey !important;
+  /* background-color: #3f51b5 !important; */
 }
