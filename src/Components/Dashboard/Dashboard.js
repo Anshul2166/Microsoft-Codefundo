@@ -5,6 +5,7 @@ import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
 import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
+import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
 import tornados from "../../shared/tornado";
@@ -37,11 +38,11 @@ class DashboardContent extends Component {
       <div className="dash-content">
         {tornadoDetails}
         <Grid container spacing={24}>
-          <Box children={<SOS/>} size={12}/>
+          <Box children={<SOS/>} size={12} sm={12} md={12}/>
           <Box children={<Feed />} title="Local News Feed" size={6}/>
-          <Box children={<Feed />} title="Twitter Feed" size={6}/>
-          <Box children={<DemoParagraph />} size={12}/>
-          <Box children={LineChart} size={12}/>
+          <Box children={<SocialFeed />} title="Twitter Feed" size={5} className="shift-right"/>
+          <Box children={<DemoParagraph />} sm={12} md={12} size={12}/>
+          <Box children={LineChart} size={12} sm={12} md={12}/>
         </Grid>
       </div>
     );

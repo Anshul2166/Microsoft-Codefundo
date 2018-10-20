@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
+import feeds from "../../shared/feeds";
 import "./Feed.css";
 
 const NewsFeedCard = data => {
@@ -35,34 +36,6 @@ const NewsFeedCard = data => {
     </div>
   );
 };
-
-const feeds = [
-  {
-    title: "Lizard",
-    description:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-  },
-  {
-    title: "Lizard",
-    description:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-  },
-  {
-    title: "Lizard",
-    description:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-  },
-  {
-    title: "Lizard",
-    description:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-  },
-  {
-    title: "Lizard",
-    description:
-      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-  }
-];
 
 class Feed extends Component {
   render() {

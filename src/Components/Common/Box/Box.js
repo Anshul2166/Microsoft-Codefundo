@@ -10,7 +10,7 @@ import "./Box.css";
 
 const Box = props => {
   return (
-    <Grid className="box-boundary" item xs={12} sm={props.size}>
+    <Grid className={props.className+" box-boundary"} item xs={12} sm={props.sm||6} md={props.md||6} lg={props.size}>
       <Paper className="box-body">{props.children}</Paper>
     </Grid>
   );

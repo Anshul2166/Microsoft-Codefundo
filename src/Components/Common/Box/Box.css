@@ -1,5 +1,5 @@
 .box-body {
-  min-width: 20%;
+  min-width: 10%;
   min-height: 35vh;
   padding: 2.5%;
   margin: 2.5%;
@@ -12,4 +12,7 @@ p {
 }
 .box-boundary .title {
   color: floralwhite !important;
+}
+.shift-right {
+  margin-left: auto !important;
 }
