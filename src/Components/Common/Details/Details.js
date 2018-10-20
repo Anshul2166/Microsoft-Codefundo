@@ -6,21 +6,21 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import blue from "@material-ui/core/colors/blue";
 import Grid from "@material-ui/core/Grid";
 import AlarmIcon from "@material-ui/icons/Alarm";
+import cloud from "../../../Common/Images/cloud.png";
+import speed from "../../../Common/Images/windspeed.png";
+import strength from "../../../Common/Images/strength.png";
+import distance from "../../../Common/Images/distance.png";
 import './Details.css';
 
 const styles = theme => ({
   card: {
     maxWidth: 600,
-    margin: 15,
-    padding: 15,
-    // backgroundColor:"#395c6b"
-    backgroundColor:"#395c6b"
+    margin: 10,
+    padding: 15
   },
   avatar: {
-    backgroundColor: "oldlace",
     color:"black"
   },
   iconSmall: {
@@ -35,6 +35,8 @@ const styles = theme => ({
   }
 });
 
+const order=[strength,speed,distance,cloud];
+
 class Details extends React.Component {
   render() {
     const { classes } = this.props;
@@ -46,8 +48,7 @@ class Details extends React.Component {
         <Card className={classes.card+" details-card"}>
           <CardHeader
             avatar={
-              <Avatar aria-label={key} className={classes.avatar}>
-                {key.charAt(0)}
+              <Avatar src={order[index]} aria-label={key} className={classes.avatar}>
               </Avatar>
             }
             title={key}

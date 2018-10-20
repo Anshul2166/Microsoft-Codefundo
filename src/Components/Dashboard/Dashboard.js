@@ -37,11 +37,12 @@ class DashboardContent extends Component {
     return (
       <div className="dash-content">
         {tornadoDetails}
+    
         <Grid container spacing={24}>
-          <Box children={<SOS/>} size={12} sm={12} md={12} backClass="blue-violet"/>
+          <Box children={<SOS/>} size={12} sm={12} md={12}/>
           <Box children={<Feed />} title="Local News Feed" size={6}/>
           <Box children={<SocialFeed />} title="Twitter Feed" size={5} className="shift-right"/>
-          <Box children={<Map />} sm={12} md={12} size={12}/>
+          <Box children={<DemoParagraph />} sm={12} md={12} size={12}/>
           <Box children={LineChart} size={12} sm={12} md={12}/>
         </Grid>
       </div>

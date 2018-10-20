@@ -3,15 +3,14 @@
   min-height: 35vh;
   padding: 2.5%;
   margin: 2.5%;
-  background-color: #395c6b !important;
   overflow: hidden;
 }
 .box-body h2,
 p {
-  color: white !important;
+  /* color: white !important; */
 }
 .box-boundary .title {
-  color: floralwhite !important;
+  /* color: floralwhite !important; */
 }
 .shift-right {
   margin-left: auto !important;

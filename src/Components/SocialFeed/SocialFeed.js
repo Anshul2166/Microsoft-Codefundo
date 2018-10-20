@@ -18,7 +18,7 @@ const styles = theme => ({
     maxWidth: 450,
     margin: "5%",
     padding: "2.5%",
-    border: "1px solid floralwhite",
+    border: "1px solid black",
     height: "fit-content",
     overflow: "hidden"
   },

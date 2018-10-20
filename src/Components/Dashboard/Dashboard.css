@@ -3,8 +3,7 @@
   margin: 2%;
 }
 .dashboard {
-  background-color: #223a5e;
-  color: #d2d1d1;
+  background-color: rgba(203, 203, 210, 0.15);
 }
 .shift-right {
   float: right;
