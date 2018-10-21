@@ -12,6 +12,8 @@ import red from "@material-ui/core/colors/red";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import socialInfo from "../../shared/socialInfo";
+import twitterLogo from "../../Common/Images/twitter.png";
+import { Grid } from "@material-ui/core";
 
 const styles = theme => ({
   card: {
@@ -84,9 +86,17 @@ class SocialFeed extends React.Component {
     ));
     return (
       <div className={classes.socialFeed}>
-        <Typography gutterBottom variant="display1" component="h2">
-          <span className={classes.title}>Twitter feed</span>
-        </Typography>
+        <Typography gutterBottom variant="display1" className={classes.centerDiv}>
+        <Grid container spacing={24}>
+          <Grid item sm={3} />
+          <Grid item sm={1}>
+            <Avatar src={twitterLogo} />
+          </Grid>
+          <Grid item sm={5}>
+            <span className={classes.text}>Twitter Feed</span>
+          </Grid>
+        </Grid>
+      </Typography>
         {allSocialFeeds}
       </div>
     );

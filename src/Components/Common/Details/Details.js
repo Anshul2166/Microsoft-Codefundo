@@ -12,57 +12,61 @@ import cloud from "../../../Common/Images/cloud.png";
 import speed from "../../../Common/Images/windspeed.png";
 import strength from "../../../Common/Images/strength.png";
 import distance from "../../../Common/Images/distance.png";
-import './Details.css';
+import "./Details.css";
 
 const styles = theme => ({
   card: {
     maxWidth: 600,
-    margin: 10,
-    padding: 15
+    margin: 1,
+    padding: 5
   },
   avatar: {
-    color:"black"
+    color: "black"
   },
   iconSmall: {
-    float:"right"
+    float: "right"
   },
-  caption:{
-    float:"left"
+  caption: {
+    float: "left"
   },
   verticalCenter: {
     marginTop: "auto",
     marginBottom: "auto"
+  },
+  content:{
+    paddingTop:20
   }
 });
 
-const order=[strength,speed,distance,cloud];
+const order = [strength, speed, distance, cloud];
 
 class Details extends React.Component {
   render() {
     const { classes } = this.props;
-    let data = this.props.data.parameters;    
+    let data = this.props.data.parameters;
     let keys = Object.keys(data);
 
     const tornado = keys.map((key, index) => (
       <Grid className="" item lg={3} md={4} sm={6} xs={12}>
-        <Card className={classes.card+" details-card"}>
+        <Card className={classes.card + " details-card"}>
           <CardHeader
             avatar={
-              <Avatar src={order[index]} aria-label={key} className={classes.avatar}>
-              </Avatar>
+              <Avatar
+                src={order[index]}
+                aria-label={key}
+                className={classes.avatar}
+              />
             }
             title={key}
             subheader={data[key].info}
           />
-          <CardContent>
+          <CardContent className={classes.content}>
             <Grid container spacing={24}>
-              <Grid item sm={3}>
-                <AlarmIcon className={classes.iconSmall} />
-              </Grid>
+              <Grid item sm={3} />
               <Grid className={classes.verticalCenter} item sm={9}>
                 <Typography
                   variant="caption"
-                  className={classes.verticalCenter +" "+classes.caption}
+                  className={classes.verticalCenter + " " + classes.caption}
                 >
                   Last updated {data[key].timestamp}
                 </Typography>

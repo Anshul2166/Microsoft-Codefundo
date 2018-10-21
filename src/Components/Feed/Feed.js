@@ -9,6 +9,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import feeds from "../../shared/feeds";
 import "./Feed.css";
+import { Grid, Avatar } from "@material-ui/core";
+import newsfeedlogo from "../../Common/Images/newsfeed.png";
 
 const NewsFeedCard = data => {
   return (
@@ -49,7 +51,15 @@ class Feed extends Component {
     return (
       <div className="feed-div">
         <Typography gutterBottom variant="display1" component="h2">
-          <span className="title">News feed</span>
+          <Grid container spacing={24}>
+            <Grid item sm={3} />
+            <Grid item sm={1}>
+              <Avatar src={newsfeedlogo} />
+            </Grid>
+            <Grid item sm={4}>
+              News feed
+            </Grid>
+          </Grid>
         </Typography>
         {allFeeds}
       </div>
