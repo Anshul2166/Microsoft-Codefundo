@@ -16,14 +16,52 @@ const initialState={
         animatePoints:[]
     },
     news:{
-        newsData:[],
+        newsData:[ {
+            title: "Resuce operation",
+            description:
+              "Volunteers have launched a rescue operation near the coastal regions and an estimate 50,000 have been evacuated"
+          },
+          {
+            title: "Lizard",
+            description:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+          },
+          {
+            title: "Lizard",
+            description:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+          },
+          {
+            title: "Lizard",
+            description:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+          },
+          {
+            title: "Lizard",
+            description:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
+          }],
         likedNews:[]
     },
     sos:{
         sosData:[]
     },
     twitter:{
-        tweetList:[],
+        tweetList:[{
+            "name":"Anshul",
+            "date":"September 14,2017",
+            "description":"There has been a massive tornado approaching the city gates that has driven the people crazy."
+        },
+        {
+            "name":"Anshul",
+            "date":"September 14,2017",
+            "description":"There has been a massive tornado approaching the city gates that has driven the people crazy."
+        },
+        {
+            "name":"Anshul",
+            "date":"September 14,2017",
+            "description":"There has been a massive tornado approaching the city gates that has driven the people crazy."
+        }],
         tweetLikeList:[]
     }
 };

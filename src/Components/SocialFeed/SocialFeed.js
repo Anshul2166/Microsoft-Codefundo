@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
-import socialInfo from "../../shared/socialInfo";
 import twitterLogo from "../../Common/Images/twitter.png";
 import { Grid } from "@material-ui/core";
 
@@ -50,6 +49,7 @@ const styles = theme => ({
 class SocialFeed extends React.Component {
   render() {
     const { classes } = this.props;
+    const socialInfo=this.props.tweets;
     const FeedCard = data => {
       console.log(data);
       return (

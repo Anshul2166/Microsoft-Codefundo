@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <Header messages={messages} notifications={notifications} />
-        <DashboardContent chartData={this.props.chartData}/>
+        <DashboardContent tweets={this.props.tweets} chartData={this.props.chartData} newsFeed={this.props.newsFeed}/>
         <Footer />
       </div>
     );
@@ -41,17 +41,15 @@ class DashboardContent extends Component {
     const tornadoDetails = tornados.map((tornado, index) => (
       <Details data={tornado} key={index} />
     ));
-    console.log("Logging in props")
-    console.log(this.props.chartData);
     return (
       <div className="dash-content">
         {tornadoDetails}
 
         <Grid container spacing={24}>
           <Box children={<SOS />} size={12} sm={12} md={12} />
-          <Box children={<Feed />} title="Local News Feed" size={6} />
+          <Box children={<Feed newsFeed={this.props.newsFeed}/>} title="Local News Feed" size={6} />
           <Box
-            children={<SocialFeed />}
+            children={<SocialFeed tweets={this.props.tweets}/>}
             title="Twitter Feed"
             size={5}
             className="shift-right"
@@ -71,7 +69,9 @@ class DashboardContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    chartData: state.chart.chartData
+    chartData: state.chart.chartData,
+    tweets:state.twitter.tweetList,
+    newsFeed:state.news.newsData
   };
 }
 

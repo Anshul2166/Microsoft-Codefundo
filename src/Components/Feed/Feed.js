@@ -41,7 +41,7 @@ const NewsFeedCard = data => {
 
 class Feed extends Component {
   render() {
-    const allFeeds = feeds.map((feed, index) => (
+    const allFeeds = this.props.newsFeed.map((feed, index) => (
       <NewsFeedCard
         key={index}
         title={feed.title}
