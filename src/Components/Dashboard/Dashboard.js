@@ -9,9 +9,10 @@ import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
 import tornados from "../../shared/tornado";
-import { LineChart } from "../Common/Charts/charts";
+import LineChart  from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
+import { connect } from "react-redux";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -19,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <Header messages={messages} notifications={notifications} />
-        <DashboardContent />
+        <DashboardContent chartData={this.props.chartData}/>
         <Footer />
       </div>
     );
@@ -30,27 +31,51 @@ const title = "xs={12} sm={6}";
 const DemoParagraph = () => <p>{title}</p>;
 
 class DashboardContent extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      data:[]
+    }
+  }
   render() {
     const tornadoDetails = tornados.map((tornado, index) => (
       <Details data={tornado} key={index} />
     ));
+    console.log("Logging in props")
+    console.log(this.props.chartData);
     return (
       <div className="dash-content">
         {tornadoDetails}
-    
+
         <Grid container spacing={24}>
-          <Box children={<SOS/>} size={12} sm={12} md={12}/>
-          <Box children={<Feed />} title="Local News Feed" size={6}/>
-          <Box children={<SocialFeed />} title="Twitter Feed" size={5} className="shift-right"/>
-          <Box children={<DemoParagraph />} sm={12} md={12} size={12}/>
-          <Box children={LineChart} size={12} sm={12} md={12}/>
+          <Box children={<SOS />} size={12} sm={12} md={12} />
+          <Box children={<Feed />} title="Local News Feed" size={6} />
+          <Box
+            children={<SocialFeed />}
+            title="Twitter Feed"
+            size={5}
+            className="shift-right"
+          />
+          <Box children={<DemoParagraph />} sm={12} md={12} size={12} />
+          <Box
+            children={<LineChart data={this.props.chartData}/>}
+            size={12}
+            sm={12}
+            md={12}
+          />
         </Grid>
       </div>
     );
   }
 }
 
-export default Dashboard;
+function mapStateToProps(state) {
+  return {
+    chartData: state.chart.chartData
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);
 
 // Removing the component that would render the map to avoid unneccesary api calls
 // To add map
