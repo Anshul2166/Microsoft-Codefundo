@@ -7,7 +7,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import AlarmIcon from "@material-ui/icons/Alarm";
 import cloud from "../../../Common/Images/cloud.png";
 import speed from "../../../Common/Images/windspeed.png";
 import strength from "../../../Common/Images/strength.png";

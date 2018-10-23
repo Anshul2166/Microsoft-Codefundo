@@ -3,7 +3,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
-import Map from "../Map/Map";
+// import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
 import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
@@ -42,7 +42,7 @@ class DashboardContent extends Component {
           <Box children={<SOS/>} size={12} sm={12} md={12}/>
           <Box children={<Feed />} title="Local News Feed" size={6}/>
           <Box children={<SocialFeed />} title="Twitter Feed" size={5} className="shift-right"/>
-          <Box children={<Map />} sm={12} md={12} size={12}/>
+          <Box children={<DemoParagraph />} sm={12} md={12} size={12}/>
           <Box children={LineChart} size={12} sm={12} md={12}/>
         </Grid>
       </div>
