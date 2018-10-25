@@ -3,18 +3,16 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
-// import Map from "../Map/Map";
 import Feed from "../Feed/Feed";
 import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
-// import tornados from "../../shared/tornado";
 import LineChart  from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import newsActions from "../../actions/newsAction";
+import * as newsActions from "../../actions/newsAction";
 import "./Dashboard.css";
 
 class Dashboard extends Component {

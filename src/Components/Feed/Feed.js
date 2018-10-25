@@ -14,7 +14,7 @@ import newsfeedlogo from "../../Common/Images/newsfeed.png";
 
 const NewsFeedCard = data => {
   return (
-    <div className="feed-div">
+    // <div className="feed-div">
       <Card className="feed-card">
         <CardActionArea>
           <CardContent>
@@ -35,7 +35,7 @@ const NewsFeedCard = data => {
           </IconButton>
         </CardActions>
       </Card>
-    </div>
+    // </div>
   );
 };
 

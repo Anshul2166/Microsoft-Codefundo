@@ -7,8 +7,8 @@
 }
 .feed-div {
   padding: 2%;
-  height: 35vh;
-  overflow: auto;
+  height: 40vh;
+  overflow: scroll;
 }
 .card-actions-row > button {
   margin-left: auto;

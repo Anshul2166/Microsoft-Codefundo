@@ -19,8 +19,8 @@ router.get("/", (req, res, next) => {
       page: 1
     })
     .then(response => {
-      console.log(response);
-      res.json({ status: "success", data: response });
+      console.log(response.articles);
+      res.json({ status: "success", data: response.articles });
     })
     .catch(err => res.json({ status: "fail", data: {} }));
 });
