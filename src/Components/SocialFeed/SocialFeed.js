@@ -11,8 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
-import twitterLogo from "../../Common/Images/twitter.png";
-import { Grid } from "@material-ui/core";
 import { Timeline } from "react-twitter-widgets";
 
 const styles = theme => ({

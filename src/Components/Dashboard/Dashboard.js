@@ -13,11 +13,13 @@ import Details from "../Common/Details/Details";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as newsActions from "../../actions/newsAction";
+import * as mapActions from "../../actions/mapActions";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
   componentWillMount(){
-    this.props.news.showNewsFeed();
+    // this.props.news.showNewsFeed();
+    this.props.map.getSafehouses();
   }
   render() {
     return (
@@ -52,13 +54,12 @@ class DashboardContent extends Component {
 
         <Grid container spacing={24}>
           <Box children={<SOS />} size={12} sm={12} md={12} />
-          <Box children={<Feed newsFeed={this.props.newsFeed}/>} title="Local News Feed" size={6} />
-          <Box
-            children={<SocialFeed tweets={this.props.tweets}/>}
-            title="Twitter Feed"
+          <Box children={<Feed newsFeed={this.props.newsFeed||[]}/>} title="Local News Feed" size={6} />
+          {/* <Box
+            children={<SocialFeed />}
             size={5}
             className="shift-right"
-          />
+          /> */}
           <Box children={<DemoParagraph />} sm={12} md={12} size={12} />
           <Box
             children={<LineChart data={this.props.chartData}/>}
@@ -77,14 +78,16 @@ function mapStateToProps(state) {
   return {
     chartData: state.chart.chartData,
     hurricaneData:state.tornado.tornadoDetails,
-    tweets:state.twitter.tweetList,
-    newsFeed:state.news.newsData
+    // tweets:state.twitter.tweetList,
+    // newsFeed:state.news.newsData
+    map:state.map.safeHouse
   };
 }
 
 const mapActionsToProps = dispatch => {
   return {
-    news: bindActionCreators(newsActions, dispatch)
+    news: bindActionCreators(newsActions, dispatch),
+    map:bindActionCreators(mapActions,dispatch)
   };
 };
 

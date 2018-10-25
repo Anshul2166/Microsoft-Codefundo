@@ -13,7 +13,8 @@ const initialState={
     },
     map:{
         mapData:[],
-        animatePoints:[]
+        animatePoints:[],
+        safeHouse:{}
     },
     news:{
         newsData:[ {

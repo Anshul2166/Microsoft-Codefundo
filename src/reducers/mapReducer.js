@@ -8,6 +8,11 @@ const mapReducer = (state = {}, action) => {
         ...state,
         mapData: action.payload
       };
+    case ACTIONS.GET_SAFE_HOUSES:
+      return {
+        ...state,
+        safeHouse: action.payload
+      };
     case ACTIONS.ANIMATE_MAP:
       return {
         ...state,
