@@ -1,9 +1,9 @@
 import * as ACTIONS from "./actionTypes";
 
-export function showNewsFeed(data){
+export function showNewsFeed(){
     return{
-        type:ACTIONS.SHOW_NEWS_FEED,
-        payload:data
+        type:ACTIONS.SHOW_NEWS_FEED
+        // payload:data
     }
 }
 

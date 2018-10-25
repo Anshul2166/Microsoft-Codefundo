@@ -13,6 +13,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import twitterLogo from "../../Common/Images/twitter.png";
 import { Grid } from "@material-ui/core";
+import { Timeline } from "react-twitter-widgets";
 
 const styles = theme => ({
   card: {
@@ -39,17 +40,17 @@ const styles = theme => ({
   socialFeed: {
     height: "35vh",
     overflow: "auto",
-    margin:"2.5%"    
+    margin: "2.5%"
   },
-  title:{
-    margin:"2.5%"
+  title: {
+    margin: "2.5%"
   }
 });
 
 class SocialFeed extends React.Component {
   render() {
     const { classes } = this.props;
-    const socialInfo=this.props.tweets;
+    const socialInfo = this.props.tweets;
     const FeedCard = data => {
       console.log(data);
       return (
@@ -86,18 +87,34 @@ class SocialFeed extends React.Component {
     ));
     return (
       <div className={classes.socialFeed}>
-        <Typography gutterBottom variant="display1" className={classes.centerDiv}>
-        <Grid container spacing={24}>
-          <Grid item sm={3} />
-          <Grid item sm={1}>
-            <Avatar src={twitterLogo} />
+        {/* <Typography
+          gutterBottom
+          variant="display1"
+          className={classes.centerDiv}
+        >
+          <Grid container spacing={24}>
+            <Grid item sm={3} />
+            <Grid item sm={1}>
+              <Avatar src={twitterLogo} />
+            </Grid>
+            <Grid item sm={5}>
+              <span className={classes.text}>Twitter Feed</span>
+            </Grid>
           </Grid>
-          <Grid item sm={5}>
-            <span className={classes.text}>Twitter Feed</span>
-          </Grid>
-        </Grid>
-      </Typography>
-        {allSocialFeeds}
+        </Typography> */}
+        {/* {allSocialFeeds} */}
+        <Timeline
+          className="timeline-123456"
+          dataSource={{
+            sourceType: "profile",
+            screenName: "NWSNHC"
+          }}
+          options={{
+            username: "Natl Hurricane Ctr",
+            height: "400"
+          }}
+          onLoad={() => console.log("Timeline is loaded!")}
+        />
       </div>
     );
   }

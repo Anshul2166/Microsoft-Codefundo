@@ -13,9 +13,14 @@ import LineChart  from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import newsActions from "../../actions/newsAction";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
+  componentWillMount(){
+    this.props.news.showNewsFeed();
+  }
   render() {
     return (
       <div className="dashboard">
@@ -79,7 +84,13 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+const mapActionsToProps = dispatch => {
+  return {
+    news: bindActionCreators(newsActions, dispatch)
+  };
+};
+
+export default connect(mapStateToProps,mapActionsToProps)(Dashboard);
 
 // Removing the component that would render the map to avoid unneccesary api calls
 // To add map
