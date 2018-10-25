@@ -8,7 +8,7 @@ import Feed from "../Feed/Feed";
 import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
-import tornados from "../../shared/tornado";
+// import tornados from "../../shared/tornado";
 import LineChart  from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <Header messages={messages} notifications={notifications} />
-        <DashboardContent tweets={this.props.tweets} chartData={this.props.chartData} newsFeed={this.props.newsFeed}/>
+        <DashboardContent hurricane={this.props.hurricaneData} tweets={this.props.tweets} chartData={this.props.chartData} newsFeed={this.props.newsFeed}/>
         <Footer />
       </div>
     );
@@ -38,7 +38,9 @@ class DashboardContent extends Component {
     }
   }
   render() {
-    const tornadoDetails = tornados.map((tornado, index) => (
+    console.log(this.props);
+    const hurricane=this.props.hurricane;
+    const tornadoDetails = hurricane.map((tornado, index) => (
       <Details data={tornado} key={index} />
     ));
     return (
@@ -68,8 +70,10 @@ class DashboardContent extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
     chartData: state.chart.chartData,
+    hurricaneData:state.tornado.tornadoDetails,
     tweets:state.twitter.tweetList,
     newsFeed:state.news.newsData
   };

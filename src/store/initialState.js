@@ -63,6 +63,28 @@ const initialState={
             "description":"There has been a massive tornado approaching the city gates that has driven the people crazy."
         }],
         tweetLikeList:[]
+    },
+    tornado:{
+        tornadoDetails:[{
+            parameters:{
+              "Hurricane Strength":{
+                "info":"Moderate",
+                "timestamp":"2 hours ago"
+              },
+              "Hurricane Speed": {
+                "info":"35 mph",
+                "timestamp":"3 hours ago"
+              },
+              "Distance from coast": {
+                "info":"75 miles",
+                "timestamp":"2 hours ago"
+              },
+              "Wind Speed": {
+                "info":"100 mph",
+                "timestamp":"2 hours ago"
+              }
+            }
+          }]
     }
 };
 

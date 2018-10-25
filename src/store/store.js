@@ -4,6 +4,7 @@ import mapReducer from "../reducers/mapReducer";
 import newsReducer from "../reducers/newsReducer";
 import sosReducer from "../reducers/sosReducer";
 import twitterReducer from "../reducers/twitterReducer";
+import tornadoReducer from "../reducers/tornadoReducer";
 import thunk from "redux-thunk";
 import initialState from "./initialState";
 
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   map: mapReducer,
   news: newsReducer,
   sos: sosReducer,
-  twitter: twitterReducer
+  twitter: twitterReducer,
+  tornado:tornadoReducer
 });
 
 const middlewares = applyMiddleware(thunk);
