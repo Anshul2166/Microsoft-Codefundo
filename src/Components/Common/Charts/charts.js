@@ -15,7 +15,8 @@ const LineChart =(props)=> {
         className="chart-in-dash"
         data={props.data}
       >
-        <Axis primary type="time" />
+        {/* <Axis primary type="time" /> */}
+        <Axis primary type="linear" />
         <Axis type="linear" />
         <Series type={Line} />
       </Chart>

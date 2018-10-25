@@ -18,8 +18,8 @@ import { Timeline } from "react-twitter-widgets";
 const styles = theme => ({
   card: {
     maxWidth: 450,
-    margin: "5%",
-    padding: "2.5%",
+    // margin: "5%",
+    // padding: "1% 2%",
     border: "1px solid black",
     height: "fit-content",
     overflow: "hidden"
@@ -38,12 +38,7 @@ const styles = theme => ({
     marginRight: "auto"
   },
   socialFeed: {
-    height: "35vh",
-    overflow: "auto",
-    margin: "2.5%"
-  },
-  title: {
-    margin: "2.5%"
+    height: "44vh"
   }
 });
 
