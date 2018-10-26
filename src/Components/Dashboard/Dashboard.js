@@ -8,7 +8,7 @@ import Map from "../Map/Map";
 import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
-import LineChart  from "../Common/Charts/charts";
+import LineChart from "../Common/Charts/charts";
 import SOS from "../SOS/SOS";
 import Details from "../Common/Details/Details";
 import { connect } from "react-redux";
@@ -18,12 +18,23 @@ import * as mapActions from "../../actions/mapActions";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
-
+  componentWillMount() {
+    // this.props.news.showNewsFeed();
+    this.props.safeHouse.getSafehouses();
+  }
   render() {
+    console.log("Showing all props");
+    console.log(this.props);
     return (
       <div className="dashboard">
         <Header messages={messages} notifications={notifications} />
-        <DashboardContent hurricane={this.props.hurricaneData} tweets={this.props.tweets} chartData={this.props.chartData} newsFeed={this.props.newsFeed}/>
+        <DashboardContent
+          safehouse={this.props.map}
+          hurricane={this.props.hurricaneData}
+          tweets={this.props.tweets}
+          chartData={this.props.chartData}
+          newsFeed={this.props.newsFeed}
+        />
         <Footer />
       </div>
     );
@@ -34,15 +45,22 @@ const title = "xs={12} sm={6}";
 const DemoParagraph = () => <p>{title}</p>;
 
 class DashboardContent extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      data:[]
+    this.state = {
+      data: [],
+      safehouse: []
+    };
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.safehouse !== this.state.safehouse) {
+      this.setState({ safehouse: nextProps.safehouse });
     }
   }
   render() {
     console.log(this.props);
-    const hurricane=this.props.hurricane;
+    
+    const hurricane = this.props.hurricane;
     const tornadoDetails = hurricane.map((tornado, index) => (
       <Details data={tornado} key={index} />
     ));
@@ -52,15 +70,24 @@ class DashboardContent extends Component {
 
         <Grid container spacing={24}>
           <Box children={<SOS />} size={12} sm={12} md={12} />
-          <Box children={<Feed newsFeed={this.props.newsFeed||[]}/>} title="Local News Feed" size={6} />
+          <Box
+            children={<Feed newsFeed={this.props.newsFeed || []} />}
+            title="Local News Feed"
+            size={6}
+          />
           {/* <Box
             children={<SocialFeed />}
             size={5}
             className="shift-right"
           /> */}
-          <Box children={<Map />} sm={12} md={12} size={12} />
           <Box
-            children={<LineChart data={this.props.chartData}/>}
+            children={<Map safehouse={this.props.safehouse} />}
+            sm={12}
+            md={12}
+            size={12}
+          />
+          <Box
+            children={<LineChart data={this.props.chartData} />}
             size={12}
             sm={12}
             md={12}
@@ -72,24 +99,28 @@ class DashboardContent extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log("logging in state");
   console.log(state);
   return {
     chartData: state.chart.chartData,
-    hurricaneData:state.tornado.tornadoDetails,
+    hurricaneData: state.tornado.tornadoDetails,
     // tweets:state.twitter.tweetList,
     // newsFeed:state.news.newsData
-    map:state.map.safeHouse
+    map: state.map.safeHouse
   };
 }
 
 const mapActionsToProps = dispatch => {
   return {
     news: bindActionCreators(newsActions, dispatch),
-    map:bindActionCreators(mapActions,dispatch)
+    safeHouse: bindActionCreators(mapActions, dispatch)
   };
 };
 
-export default connect(mapStateToProps,mapActionsToProps)(Dashboard);
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(Dashboard);
 
 // Removing the component that would render the map to avoid unneccesary api calls
 // To add map

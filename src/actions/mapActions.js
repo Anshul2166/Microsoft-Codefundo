@@ -16,7 +16,7 @@ export function getSafehouses() {
           console.log(resp);
           dispatch({
             type: ACTIONS.GET_SAFE_HOUSES,
-            payload: resp
+            payload: resp.data.resp.location.coordinates
           });
   
         })

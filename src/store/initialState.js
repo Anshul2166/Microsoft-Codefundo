@@ -14,7 +14,7 @@ const initialState={
     map:{
         mapData:[],
         animatePoints:[],
-        safeHouse:{}
+        safeHouse:[]
     },
     news:{
         newsData:[ {

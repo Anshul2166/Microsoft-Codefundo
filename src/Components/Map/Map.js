@@ -8,13 +8,16 @@ const {
 } = require("react-google-maps");
 
 const Map = compose(
-  withProps({
+  withProps(props=>(
+    {
+    destLat:props.safehouse[0],
+    destLng:props.safehouse[1],
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcNwOx6j2oXaxJ7y8lOy8FpoT_WTPuXZE&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />
-  }),
+  })),
   withScriptjs,
   withGoogleMap,
   lifecycle({
@@ -22,6 +25,8 @@ const Map = compose(
       let google = window.google;
       const DirectionsService = new google.maps.DirectionsService();
       let lat, lng;
+      console.log("Here in mapJs");
+      console.log(this.props);
       if (navigator.geolocation) {
         //if browser supports geolocation and user allows us the access, then the condition is satisfied
         navigator.geolocation.getCurrentPosition(position => {
@@ -31,7 +36,7 @@ const Map = compose(
           DirectionsService.route(
             {
               origin: new google.maps.LatLng(lat,lng),
-              destination: new google.maps.LatLng(17.5498931,78.5545764),
+              destination: new google.maps.LatLng(this.props.destLat,this.props.destLng),
               travelMode: google.maps.TravelMode.DRIVING
             },
             (result, status) => {
