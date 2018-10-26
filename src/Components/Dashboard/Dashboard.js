@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import Box from "../Common/Box/Box";
 import { Grid } from "@material-ui/core";
 import Feed from "../Feed/Feed";
+import Map from "../Map/Map";
 import SocialFeed from "../SocialFeed/SocialFeed";
 import messages from "../../shared/messages";
 import notifications from "../../shared/notifications";
@@ -17,10 +18,7 @@ import * as mapActions from "../../actions/mapActions";
 import "./Dashboard.css";
 
 class Dashboard extends Component {
-  componentWillMount(){
-    // this.props.news.showNewsFeed();
-    this.props.map.getSafehouses();
-  }
+
   render() {
     return (
       <div className="dashboard">
@@ -60,7 +58,7 @@ class DashboardContent extends Component {
             size={5}
             className="shift-right"
           /> */}
-          <Box children={<DemoParagraph />} sm={12} md={12} size={12} />
+          <Box children={<Map />} sm={12} md={12} size={12} />
           <Box
             children={<LineChart data={this.props.chartData}/>}
             size={12}
