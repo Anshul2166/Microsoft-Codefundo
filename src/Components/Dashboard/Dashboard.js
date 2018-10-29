@@ -80,12 +80,12 @@ class DashboardContent extends Component {
             size={5}
             className="shift-right"
           /> */}
-          <Box
+          {/* <Box
             children={<Map safehouse={this.props.safehouse} />}
             sm={12}
             md={12}
             size={12}
-          />
+          /> */}
           <Box
             children={<LineChart data={this.props.chartData} />}
             size={12}
